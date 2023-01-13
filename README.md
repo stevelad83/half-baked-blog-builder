@@ -1,7 +1,3 @@
-# Blog Builder
-
-**Use [this repository](https://github.com/alchemycodelab/react-blog-builder/) as a template for your deliverable**
-
 ### Learning Objectives
 
 - Use attributes in parent components to pass data down to child components as props
@@ -13,7 +9,7 @@
 
 The objective of this application is to create a mini "Blog Builder" that contains an editing panel and a preview panel. When the attributes in the editing panel are updated, their new values are reflected in the preview.
 
-You have been provided with `<Home/>` component, an `<Editor>` component, and an completely empty `<Preview> component. Your job is to add state to the `<Home>` component which will then be passed down to the `<Editor>` and `<Preview>` components.
+You have been provided with `<Home/>` component, an `<Editor>` component, and an completely empty `<Preview> component. Your job is to add state to the `<Home>`component which will then be passed down to the`<Editor>`and`<Preview>` components.
 
 _Note: The rubric expects a commit for every variable. Start with a single prop and do the following:_
 
