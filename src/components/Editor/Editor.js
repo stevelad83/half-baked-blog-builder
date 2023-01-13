@@ -13,18 +13,34 @@ export default function Editor({
   text,
   setText,
 }) {
+  const handleTitle = (e) => {
+    setTitle(e.target.value);
+  };
+  const handleSubtitle = (e) => {
+    setSubtitle(e.target.value);
+  };
+  const handleFont = (e) => {
+    setFont(e.target.value);
+  };
+  const handleAlign = (e) => {
+    setAlign(e.target.value);
+  };
+  const handleText = (e) => {
+    setText(e.target.value);
+  };
+
   return (
     <div className="editor">
       <div className="form-control">
-        <input name="title" type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input name="title" type="text" value={title} onChange={handleTitle} />
         <label htmlFor="title">Title</label>
       </div>
       <div className="form-control">
-        <input type="text" value={subtitle} onChange={(e) => setSubtitle(e.target.value)} />
+        <input type="text" value={subtitle} onChange={handleSubtitle} />
         <label>Subtitle</label>
       </div>
       <div className="form-control">
-        <select value={font} onChange={(e) => setFont(e.target.value)}>
+        <select value={font} onChange={handleFont}>
           <option value="architect">{"Architect's Daughter"}</option>
           <option value="comforter">Comforter</option>
           <option value="fredoka">Fredoka</option>
@@ -38,53 +54,23 @@ export default function Editor({
       </div>
       <div className="form-control">
         <label>Alignment</label>
-        <div className="radio-group">
+        <div className="radio-group" onChange={handleAlign}>
           <label>
-            <input
-              name="align"
-              type="radio"
-              value="left"
-              checked={align === 'left'}
-              onChange={(e) => {
-                setAlign(e.target.value);
-              }}
-            />
+            <input name="align" type="radio" value="left" checked={align === 'left'} />
             <i className="ri-align-left"></i>
           </label>
           <label>
-            <input
-              name="align"
-              type="radio"
-              value="center"
-              checked={align === 'center'}
-              onChange={(e) => {
-                setAlign(e.target.value);
-              }}
-            />
+            <input name="align" type="radio" value="center" checked={align === 'center'} />
             <i className="ri-align-center"></i>
           </label>
           <label>
-            <input
-              name="align"
-              type="radio"
-              value="right"
-              checked={align === 'right'}
-              onChange={(e) => {
-                setAlign(e.target.value);
-              }}
-            />
+            <input name="align" type="radio" value="right" checked={align === 'right'} />
             <i className="ri-align-right"></i>
           </label>
         </div>
       </div>
       <div className="form-control">
-        <textarea
-          value={text}
-          onChange={(e) => {
-            setText(e.target.value);
-          }}
-          style={{ height: '250px' }}
-        />
+        <textarea value={text} onChange={handleText} style={{ height: '250px' }} />
         <label>Text</label>
       </div>
     </div>
